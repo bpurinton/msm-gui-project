@@ -6,6 +6,10 @@ if Rails.env.development?
   map '/git' do
     run WebGit::Server
   end
+
+  map "/eyeloupe" do
+    run Eyeloupe::Engine
+  end
 end
 
 map '/' do
