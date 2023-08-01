@@ -28,7 +28,7 @@ development:
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
     timeout: 5000
   eyeloupe:
-    <<: *default
+    adapter: sqlite3
     database: db/eyeloupe.sqlite3
     migrations_paths: <%= Gem.loaded_specs['eyeloupe'].full_gem_path + '/db/migrate' %>
     schema_dump: false
