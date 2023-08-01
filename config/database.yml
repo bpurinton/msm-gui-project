@@ -22,10 +22,16 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  primary:
+    adapter: sqlite3
+    database: db/development.sqlite3
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    timeout: 5000
+  eyeloupe:
+    <<: *default
+    database: db/eyeloupe.sqlite3
+    migrations_paths: <%= Gem.loaded_specs['eyeloupe'].full_gem_path + '/db/migrate' %>
+    schema_dump: false
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
