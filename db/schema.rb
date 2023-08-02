@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2019_09_25_193522) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_02_032646) do
   create_table "actors", force: :cascade do |t|
     t.string "name"
     t.date "dob"
@@ -46,6 +46,17 @@ ActiveRecord::Schema[7.0].define(version: 2019_09_25_193522) do
     t.integer "director_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "signalman_events", force: :cascade do |t|
+    t.string "name"
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.float "duration"
+    t.json "payload"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "duration"], name: "index_signalman_events_on_name_and_duration"
   end
 
 end
