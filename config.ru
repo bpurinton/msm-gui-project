@@ -7,7 +7,7 @@ if Rails.env.development?
     run WebGit::Server
   end
 
-  map '/signlaman' do
+  map '/signalman' do
     run Signalman::Engine
   end
 end
