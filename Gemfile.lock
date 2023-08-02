@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/excid3/signalman.git
+  revision: 23d02d68783299d71e524f24612a6b876f253468
+  specs:
+    signalman (0.1.0)
+      rails (>= 7.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -462,6 +469,7 @@ DEPENDENCIES
   rspec-rails (~> 6.0.0)
   rufo
   selenium-webdriver
+  signalman!
   specs_to_readme
   sprockets-rails
   sqlite3 (~> 1.4)
